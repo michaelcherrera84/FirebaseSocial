@@ -20,7 +20,6 @@ export const Main = () => {
 
     const getPosts = async () => {
         try {
-            if (!user) return;
             const data = await getDocs(postsRef);
             setPostsList(
                 data.docs.map((doc) => ({...doc.data(), id: doc.id})) as Post[]
